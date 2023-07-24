@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Legacy permission that allows the app to connect to Bluetooth devices. -->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <!-- Legacy permission that allows the app to scan for and bond with Bluetooth devices. -->
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <!-- For devices running Android 12 and newer, developers can request for this permission
+    in order to connect to Bluetooth peripherals that are currently bonded to the system. -->
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+    <!-- For devices running Android 12 and newer, developers can finally request for explicit
+    permission to perform Bluetooth scans without having to obtain location access. -->
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
+    <!-- Between Android 6 and Android 11 (inclusive on both ends), location permission is required
+    for the app to get BLE scan results. The main motivation behind having to explicitly require
+    the users to grant this permission is to protect users’ privacy.  A BLE scan can often
+    unintentionally reveal the user’s location to unscrupulous app developers who scan for specific
+    BLE beacons, or some BLE device may advertise location-specific information. Before Android 10,
+    ACCESS_COARSE_LOCATION can be used to gain access to BLE scan results, but we recommend using
+    ACCESS_FINE_LOCATION instead since it works for all versions of Android. -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!-- Apps targeting Android 12 (API 31) and above must request for this permission in addition
+    to ACCESS_FINE_LOCATION. -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+</manifest>
